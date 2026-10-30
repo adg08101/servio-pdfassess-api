@@ -1,6 +1,7 @@
 import { beforeAll, afterAll, describe, expect, it } from 'vitest';
 
 import { buildApp } from '../../src/app';
+import { resetConfigCache } from '../../src/config/env';
 import { stopMongoMemoryServer, startMongoMemoryServer } from '../helpers/mongo-memory';
 
 describe('Health endpoint', () => {
@@ -8,6 +9,7 @@ describe('Health endpoint', () => {
 
   beforeAll(async () => {
     process.env.MONGODB_URI = await startMongoMemoryServer();
+    resetConfigCache();
     app = await buildApp();
     await app.ready();
   });

@@ -13,6 +13,8 @@ export async function registerDocsPlugins(app: FastifyInstance): Promise<void> {
       tags: [
         { name: 'health', description: 'Health checks' },
         { name: 'auth', description: 'Authentication and sessions' },
+        { name: 'documents', description: 'PDF document import and metadata' },
+        { name: 'analysis', description: 'PDF analysis and detected interactive fields' },
       ],
     },
   });

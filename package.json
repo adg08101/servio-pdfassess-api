@@ -16,9 +16,12 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "seed": "tsx src/scripts/seed.ts"
+    "seed": "tsx src/scripts/seed.ts",
+    "sample:register": "tsx src/scripts/register-sample-document.ts",
+    "sample:analyze": "tsx src/scripts/analyze-sample-pages.ts"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.80",
     "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "^11.1.0",
     "@fastify/helmet": "^13.0.2",
@@ -31,6 +34,7 @@
     "googleapis": "^152.0.0",
     "mongoose": "^8.19.2",
     "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
     "pino-pretty": "^13.1.2",
     "uuid": "^11.1.0",
     "zod": "^4.1.12"

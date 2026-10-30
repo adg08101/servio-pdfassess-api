@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { buildApp } from '../../src/app';
+import { resetConfigCache } from '../../src/config/env';
 import { UserRole } from '../../src/modules/auth/domain/user-role';
 import { stopMongoMemoryServer, startMongoMemoryServer } from '../helpers/mongo-memory';
 
@@ -9,6 +10,7 @@ describe('Auth routes', () => {
 
   beforeAll(async () => {
     process.env.MONGODB_URI = await startMongoMemoryServer();
+    resetConfigCache();
     app = await buildApp();
     await app.ready();
   });

@@ -17,11 +17,24 @@ const envSchema = z.object({
   OBJECT_STORAGE_PROVIDER: z.enum(['local', 's3']).default('local'),
   LOCAL_STORAGE_ROOT: z.string().default('./.local-storage'),
   CORS_ORIGINS: z.string().default('http://localhost:5173'),
+  SAMPLE_PDF_PATH: z.string().default('./samples/pdfs/level2wb.pdf'),
+  ANALYSIS_MAX_PAGES_PER_JOB: z.coerce.number().int().positive().default(5),
+  ANALYSIS_MAX_FILE_SIZE_MB: z.coerce.number().int().positive().default(200),
+  ANALYSIS_DEFAULT_DPI: z.coerce.number().int().positive().default(144),
+  ANALYSIS_MAX_DPI: z.coerce.number().int().positive().default(220),
+  ANALYSIS_PREVIEW_DIR: z.string().default('./.local-storage/analysis-previews'),
+  OCR_ADAPTER: z.enum(['tesseract-cli', 'noop']).default('tesseract-cli'),
+  OCR_TESSERACT_BIN: z.string().default('tesseract'),
+  OCR_LANGUAGE: z.string().default('eng'),
 });
 
 export type AppConfig = z.infer<typeof envSchema>;
 
 let cachedConfig: AppConfig | null = null;
+
+export function resetConfigCache(): void {
+  cachedConfig = null;
+}
 
 export function getConfig(): AppConfig {
   if (cachedConfig) {
