@@ -11,3 +11,13 @@ process.env.MAX_IMPORT_PAGE_COUNT = process.env.MAX_IMPORT_PAGE_COUNT ?? '200';
 process.env.OBJECT_STORAGE_PROVIDER = process.env.OBJECT_STORAGE_PROVIDER ?? 'local';
 process.env.LOCAL_STORAGE_ROOT = process.env.LOCAL_STORAGE_ROOT ?? './.local-storage';
 process.env.CORS_ORIGINS = process.env.CORS_ORIGINS ?? 'http://localhost:5173';
+process.env.SAMPLE_PDF_PATH = process.env.SAMPLE_PDF_PATH ?? './samples/pdfs/level2wb.pdf';
+process.env.ANALYSIS_MAX_PAGES_PER_JOB = process.env.ANALYSIS_MAX_PAGES_PER_JOB ?? '5';
+process.env.ANALYSIS_MAX_FILE_SIZE_MB = process.env.ANALYSIS_MAX_FILE_SIZE_MB ?? '200';
+process.env.ANALYSIS_DEFAULT_DPI = process.env.ANALYSIS_DEFAULT_DPI ?? '144';
+process.env.ANALYSIS_MAX_DPI = process.env.ANALYSIS_MAX_DPI ?? '220';
+process.env.ANALYSIS_PREVIEW_DIR =
+  process.env.ANALYSIS_PREVIEW_DIR ?? './.local-storage/analysis-previews';
+process.env.OCR_ADAPTER = process.env.OCR_ADAPTER ?? 'noop';
+process.env.OCR_TESSERACT_BIN = process.env.OCR_TESSERACT_BIN ?? 'tesseract';
+process.env.OCR_LANGUAGE = process.env.OCR_LANGUAGE ?? 'eng';
