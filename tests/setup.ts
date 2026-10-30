@@ -1,0 +1,13 @@
+process.env.NODE_ENV = process.env.NODE_ENV ?? 'test';
+process.env.PORT = process.env.PORT ?? '3001';
+process.env.HOST = process.env.HOST ?? '127.0.0.1';
+process.env.MONGODB_URI = process.env.MONGODB_URI ?? 'mongodb://127.0.0.1:27017/pdfassess_test';
+process.env.COOKIE_SECRET = process.env.COOKIE_SECRET ?? 'test-cookie-secret-should-be-long';
+process.env.SESSION_TTL_MINUTES = process.env.SESSION_TTL_MINUTES ?? '120';
+process.env.AUTH_RATE_LIMIT_MAX = process.env.AUTH_RATE_LIMIT_MAX ?? '20';
+process.env.AUTH_RATE_LIMIT_WINDOW_MINUTES = process.env.AUTH_RATE_LIMIT_WINDOW_MINUTES ?? '1';
+process.env.MAX_IMPORT_FILE_SIZE_MB = process.env.MAX_IMPORT_FILE_SIZE_MB ?? '25';
+process.env.MAX_IMPORT_PAGE_COUNT = process.env.MAX_IMPORT_PAGE_COUNT ?? '200';
+process.env.OBJECT_STORAGE_PROVIDER = process.env.OBJECT_STORAGE_PROVIDER ?? 'local';
+process.env.LOCAL_STORAGE_ROOT = process.env.LOCAL_STORAGE_ROOT ?? './.local-storage';
+process.env.CORS_ORIGINS = process.env.CORS_ORIGINS ?? 'http://localhost:5173';
